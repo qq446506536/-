@@ -41,9 +41,9 @@ class ShoppingCarView(ViewSetMixin, APIView):
         :param kwargs:
         :return:
         """
-        print(request.POST)
-        price_id = request.POST.get('priceid')
-        course_id = request.POST.get('courseid')
+        print(request.data)
+        price_id = request.data.get('priceid')
+        course_id = request.data.get('courseid')
         course_obj = models.Course.objects.filter(id=course_id).first()
         price_obj = models.PricePolicy.objects.filter(id=price_id).first()
         if course_obj and price_obj :
