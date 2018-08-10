@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+    {% for goods in goods_list %}
+            {{ goods.name }} <a href="/buy/{{ goods.id }}/">购买</a>
+
+
+    {% endfor %}
+
+
+</body>
+</html>
