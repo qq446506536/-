@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ -->
+    <title>后台管理</title>
+    <link rel="stylesheet" href="/static/bootstrap/css/bootstrap.css">
+    <script src="/static/juery/jQuery v3.3.1.js"></script>
+    <script src="/static/bootstrap/js/bootstrap.js"></script>
+    <link href="/static/back_stage/css/da.css" rel="stylesheet">
+{#    <script charset="utf-8" src="/editor/kindeditor.js"></script>#}
+{#    <script charset="utf-8" src="/editor/lang/zh-CN.js"></script>#}
+    <link rel="stylesheet" href="/static/kindeditor/kindeditor/themes/default/default.css" />
+    <link rel="stylesheet" href="/static/kindeditor/kindeditor/themes/simple/simple.css" />
+
+
+
+  </head>
+
+  <body>
+        {% csrf_token %}
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="#">{{ request.user.blog.site_name }}</a>
+        </div>
+        <div id="navbar" class="navbar-collapse collapse">
+          <ul class="nav navbar-nav navbar-right">
+            <li><a href="#">{{ request.user.username }}</a></li>
+            <li><a href="#">修改密码</a></li>
+            <li><a href="#">模板</a></li>
+            <li><a href="/index/">首页</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-sm-3 col-md-2 sidebar">
+          <ul class="nav nav-sidebar" id="my">
+            <li><a class="my" href="/add_article/">添加文章 <span class="sr-only">(current)</span></a></li>
+            <li><a class="my" href="#">添加分类</a></li>
+            <li><a class="my" href="#">添加标签</a></li>
+            <li><a class="my" href="#">Export</a></li>
+          </ul>
+          <ul class="nav nav-sidebar">
+            <li><a href="">Nav item</a></li>
+            <li><a href="">Nav item again</a></li>
+            <li><a href="">One more nav</a></li>
+            <li><a href="">Another nav item</a></li>
+            <li><a href="">More navigation</a></li>
+          </ul>
+          <ul class="nav nav-sidebar">
+            <li><a href="">Nav item again</a></li>
+            <li><a href="">One more nav</a></li>
+            <li><a href="">Another nav item</a></li>
+          </ul>
+        </div>
+
+        <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
+        {% block main  %}
+          <h1 class="page-header">文章</h1>
+
+
+{#          <h2 class="sub-header">Section title</h2>#}
+          <div class="table-responsive">
+            <table class="table table-striped">
+              <thead>
+                <tr>
+                  <th>文章标题</th>
+                  <th>评论数</th>
+                  <th>文章发布时间</th>
+                  <th>操作</th>
+                  <th>删除</th>
+{#                  <th>Header</th>#}
+                </tr>
+              </thead>
+
+              <tbody>
+              {% for article in article_list %}
+                <tr>
+                  <td><a href="/{{ blog.site_name }}/articles/{{ article.nid }}">{{ article.title }}</a></td>
+                  <td>{{ article.comment_count }}</td>
+                  <td>{{ article.create_time|date:'Y-m-d H:i' }}</td>
+                  <td><a href="/update/{{ article.nid }};" class="operate" name="{{ article.nid }}">操作</a></td>
+                  <td><a href="javascript:void(0);" class="delete" name="{{ article.nid }}">删除</a></td>
+                </tr>
+              {% endfor %}
+
+              </tbody>
+            </table>
+          </div>
+        {% endblock %}
+        </div>
+      </div>
+    </div>
+
+    <script src="/static/back_stage/js/holder.js"></script>
+    <script src="/static/back_stage/js/ie_10.js"></script>
+  </body>
+</html>
+{% block  js%}
+    <script>
+        $('ul li').click(function () {
+            $(this).addClass('active').siblings('li').removeClass('active');
+
+
+        });
+
+        $()
+    </script>
+
+
+{% endblock %}
