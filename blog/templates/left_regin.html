@@ -1,0 +1,45 @@
+
+            <div class="panel panel-default">
+                <div class="panel-body">
+                    <h5>文章标签</h5>
+                </div>
+
+                {% for tag in tag_list %}
+                    <div class="panel-footer">
+
+                        <a href="/index/{{ blog.site_name }}/tag/{{ tag.title }}">{{ tag.title }}</a>
+                                                                            ({{ tag.count }})
+
+                    </div>
+                {% endfor %}
+            </div>
+            <div class="panel panel-default">
+                <div class="panel-body">
+                    <h5>文章分类</h5>
+                </div>
+                {% for category in category_list %}
+                    <div class="panel-footer">
+
+                        <a href="/index/{{ blog.site_name }}/category/{{ category.title }}">{{ category.title }}</a>
+                                                                    ({{ category.count }})
+
+
+                    </div>
+                {% endfor %}
+                <div class="panel-body">
+                    <h5>日期归档</h5>
+                </div>
+                {% for data in date_list %}
+                    <div class="panel-footer">
+
+                        <a href="/index/{{ blog.site_name }}/achrive/{{ data.y_m_date }}"> {{ data.y_m_date }}</a>
+                        ({{ data.count }})
+
+
+                    </div>
+                {% endfor %}
+
+            </div>
+
+
+

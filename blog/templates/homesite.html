@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+
+
+{% block content %}
+                <div class="col-md-8">
+
+            <div class="article_item" style="margin-top: 10px">
+                {% for article in article_list %}
+                    <div>
+                        <span style="margin-top: 10px"><a href="/{{ user.blog.site_name }}/articles/{{ article.nid }}"><h4>{{ article.title }}</h4></a></span>
+                        <div class="desc">
+                            <span class="">{{ article.desc }}</span>
+                        </div>
+
+                        <div class="publish_people pull-right" style="margin-top: 0px">
+                            {{ user.username }}发表于<span>{{ article.create_time|date:'Y-m-d H:i' }}</span>
+                            &nbsp;&nbsp;<span
+                                class="glyphicon glyphicon-comment">评论</span>({{ user.article.comment_count }})
+                            <span class="glyphicon glyphicon-share">阅读</span>(0)
+                        </div>
+                    </div>
+                    <br>
+                    <br>
+                    <br>
+                    <br>
+                {% endfor %}
+
+            </div>
+            <div class="col-md-2">
+                {#                <div class="panel panel-default">#}
+                {#                    <div class="panel-body">#}
+                {##}
+                {##}
+                {#                    </div>#}
+                {#                    <div class="panel-footer">Panel footer</div>#}
+                {#                </div>#}
+            </div>
+        </div>
+          {% endblock %}

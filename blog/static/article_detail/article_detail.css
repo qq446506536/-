@@ -1,0 +1,122 @@
+#div_digg {
+    float: right;
+    margin-bottom: 10px;
+    margin-right: 30px;
+    font-size: 12px;
+    width: 125px;
+    text-align: center;
+    margin-top: 10px;
+}
+.diggit {
+    float: left;
+    width: 46px;
+    height: 52px;
+    background: url(/static/img/upup.gif) no-repeat;
+    text-align: center;
+    cursor: pointer;
+    margin-top: 2px;
+    padding-top: 5px;
+}
+.buryit {
+    float: right;
+    margin-left: 20px;
+    width: 46px;
+    height: 52px;
+    background: url(/static/img/downdown.gif) no-repeat;
+    text-align: center;
+    cursor: pointer;
+    margin-top: 2px;
+    padding-top: 5px;
+}
+.diggword {
+    margin-top: 5px;
+    margin-left: 0;
+    font-size: 12px;
+    /*color: gray;*/
+}
+.clear {
+    clear: both;
+}
+div {
+    display: block;
+}
+#commentform_title {
+    background-image: url(/static/img/icon_addcomment.gif);
+    background-repeat: no-repeat;
+    padding: 0 0 0 25px;
+    margin-bottom: 10px;
+}
+element.style {
+    color: Red;
+}
+div.commentform p {
+    margin-top: 10px;
+    line-height: 20px;
+}
+.commentbox_title {
+    width: 450px;
+}
+.clear {
+    clear: both;
+}
+div.commentform textarea.comment_textarea {
+    line-height: 1.6;
+}
+ .commentform p {
+    margin-top: 10px;
+    line-height: 20px;
+}
+.comment_textarea{
+    width: 450px;
+    height: 300px;
+    font-size: 13px;
+    border: 1px solid #ccc;
+    font-family: 'PingFang SC','Helvetica Neue','Helvetica','Arial',sans-serif;
+}
+#tbCommentAuthor {
+    background-image: url(/static/img/icon_form.gif);
+    background-repeat: no-repeat;
+    border: 1px solid #ccc;
+    padding: 4px 4px 4px 30px;
+    width: 300px;
+    font-size: 13px;
+}
+#tbCommentAuthor {
+    background-position: 3px -3px;
+}
+.feedbackItem {
+    padding: 8px;
+    border-bottom: 1px dotted #ccc;
+}
+div.feedbackItem div.feedbackCon {
+    color: #888;
+    font-size: 12px;
+    line-height: 135%;
+    padding: 7px;
+    padding-right: 0;
+}
+.feedbackManage {
+    float: right;
+}
+a {
+    color: #399ab2;
+    text-decoration: none;
+}
+a {
+    color: #399ab2;
+    text-decoration: none;
+}
+.blog_comment_body {
+    word-wrap: break-word;
+    overflow: hidden;
+}
+.comment_vote {
+    text-align: right;
+}
+.bq_post_comment {
+    margin: 0 0 5px 0;
+    font-style: normal;
+    line-height: 180%;
+    border: 1px solid #ddd;
+    padding: 10px;
+}

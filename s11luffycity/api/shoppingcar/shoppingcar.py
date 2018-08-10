@@ -25,24 +25,24 @@ USERID = 1
 
 class ShoppingCarView(ViewSetMixin, APIView):
     # parser_classes = [JSONParser,]   这个是 解析器   限制前端传过来的请求头的格式 ，这样写就只能是json格式的数据类型   非json数据类型的时候 拿不到数据
-    SHOP_CAR = {}
-    SHOPPING_CAR = {
-        '用户1': {
-            1: {
-                'title': 'xxxx',
-                'price': 1,
-                'price_list': [
-                    {'id': 11, },
-                    {'id': 22},
-                    {'id': 33},
-                ]
-            },
-            3: {},
-            5: {}
-        },
-        2: {},
-        3: {},
-    }
+    # SHOP_CAR = {}
+    # SHOPPING_CAR = {
+    #     '用户1': {
+    #         1: {
+    #             'title': 'xxxx',
+    #             'price': 1,
+    #             'price_list': [
+    #                 {'id': 11, },
+    #                 {'id': 22},
+    #                 {'id': 33},
+    #             ]
+    #         },
+    #         3: {},
+    #         5: {}
+    #     },
+    #     2: {},
+    #     3: {},
+    # }
 
     def create(self, request, *args, **kwargs):
         try:
